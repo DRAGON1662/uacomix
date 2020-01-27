@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic-ext");
+.cart__heading {
+  font-size: 2.1rem;
+  color: #2d2d2d;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: inherit;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.cart__table {
+  width: 1081px;
+  margin: 0 auto;
+  border: none;
+}
+.cart__table thead {
+  background-image: url("../img/table-background.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 1081px 78px;
+  width: 1081px;
+  height: 78px;
+  font-size: 1.3rem;
+  color: #2d2d2d;
+  font-style: normal;
+  font-weight: 100;
+  text-transform: inherit;
+  text-decoration: none;
+  line-height: 50px;
+  margin-bottom: 35px;
+}
+.cart__table tbody {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.cart__table tbody tr {
+  border-bottom: 3px solid #e8e8e8;
+}
+.cart__table tbody .cart__image {
+  width: 120px;
+  border: 5px solid #f98012;
+  border-radius: 5px;
+  margin: 23px 0;
+}
+.cart__table tbody .cart__product__name {
+  color: #f98012;
+}
+.cart__table tbody .cart__remove {
+  background-image: url("../img/close-ico.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.cart__counter button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+.cart__counter .counter-minus {
+  background-image: url("../img/caret.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  width: 12px;
+  height: 12px;
+  background-position-x: 5px;
+  background-position-y: 0;
+}
+.cart__counter .counter-plus {
+  background-image: url("../img/caret.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  width: 12px;
+  height: 12px;
+  background-position-x: -6px;
+  background-position-y: 0;
+}
+
+.summary {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #2d2d2d;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.cart__orders {
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+.cart__orders div {
+  text-align: center;
+  padding: 15px 0;
+}
+.cart__orders a {
+  text-decoration: none;
+}
+.cart__orders .create-order {
+  font-size: 1.3rem;
+  color: #2d2d2d;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.cart__orders .back-to-store {
+  font-size: 1.3rem;
+  color: #2d2d2d;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f98012;
+}
+.cart__orders .back-to-store::before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 11px;
+  background-image: url("../img/befor-after.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.cart__orders .back-to-store::after {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 11px;
+  background-image: url("../img/befor-after.png");
+  background-repeat: no-repeat;
+  background-position: -36px 0;
+}
+
+.stage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 45px 0;
+}
+.stage .stage__step {
+  background-image: url("../img/stage-circle.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 59px 59px;
+  width: 59px;
+  height: 59px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 59px;
+  margin: 0 12px;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+.stage .stage__step-active {
+  background-image: url("../img/stage-circle-hover.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 59px 59px;
+  width: 59px;
+  height: 59px;
+  color: #f98012;
+}
+.stage .stage__line {
+  background-image: url("../img/stage-line.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 371px 7px;
+  width: 371px;
+  height: 7px;
+}
+.stage .stage__line-active {
+  background-image: url("../img/stage-line-hover.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 371px 7px;
+  width: 371px;
+  height: 7px;
+  color: #f98012;
+}
+
+.makeOrder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.makeOrder .makeOrder__customerInfo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 770px;
+}
+.makeOrder .orderStep__heading {
+  font-size: 1.2rem;
+  color: #f98012;
+  font-style: normal;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px;
+}
+.makeOrder .orderStep--bordered {
+  background-image: url("../img/orderStep-border.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 645px 5px;
+  width: 645px;
+  height: 5px;
+}
+.makeOrder .orderStep__content {
+  padding: 10px 0 30px;
+}
+.makeOrder .orderStep__content table {
+  text-align: center;
+  margin-left: 60px;
+}
+.makeOrder .orderStep__content td.lb {
+  text-align: right;
+  padding-right: 10px;
+  font-size: 1.1rem;
+  color: #2d2d2d;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: inherit;
+  text-decoration: none;
+}
+.makeOrder .orderStep__content input {
+  outline: none;
+  border: 4px solid #d7d7d7;
+  border-radius: 10px;
+  line-height: 1.3rem;
+  padding: 5px 0 5px 5px;
+  width: 220px;
+  margin: 5px 0;
+}
+.makeOrder .orderStep__content .delivery__body {
+  padding-top: 35px;
+}
+.makeOrder .orderStep__content .delivery__body p {
+  padding: 25px 15px 5px 15px;
+  text-align: center;
+}
+.makeOrder .orderStep__content .discount-btn {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  background: #f98012;
+  border: 1px solid #f98012;
+  outline: none;
+  cursor: pointer;
+}
+.makeOrder .orderStep__content .paymentMethod {
+  list-style-image: url(../img/filter-img.png);
+  padding-left: 2rem;
+}
+.makeOrder .orderStep__content .paymentMethod button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f98012;
+  text-decoration: none;
+  padding: 5px;
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+  color: #2d2d2d;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: inherit;
+  text-decoration: none;
+}
+.makeOrder .orderStep__content .paymentMethod li p {
+  font-size: 0.8rem;
+}
+.makeOrder .makeOrder__orderSummury {
+  width: 400px;
+  background: url(../img/filters-bg.png);
+  padding: 15px;
+  color: #fff;
+}
+.makeOrder .makeOrder__orderSummury .order {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  margin-bottom: 25px;
+}
+.makeOrder .makeOrder__orderSummury .order .order__image {
+  width: 95px;
+  border: 1px solid #666665;
+}
+.makeOrder .makeOrder__orderSummury .order .order__info {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex: 1;
+}
+.makeOrder .makeOrder__orderSummury .order .order__info .order__title {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.makeOrder .makeOrder__orderSummury .order .order__info .flex-price {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.makeOrder .makeOrder__orderSummury .orderSummury {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.makeOrder .makeOrder__orderSummury .orderSummury table {
+  width: 100%;
+}
+.makeOrder .makeOrder__orderSummury .orderSummury table td {
+  padding: 5px 0;
+}
+.makeOrder .makeOrder__orderSummury .orderSummury table tr.totalSummury {
+  font-size: 1.4rem;
+}
+.makeOrder .makeOrder__orderSummury .orderSummury table tr.totalSummury td {
+  padding-top: 30px;
+}
+.makeOrder .makeOrder__orderSummury .orderSummury .text-upper {
+  text-transform: uppercase;
+}
+.makeOrder .makeOrder__orderSummury .orderSummury .text-right {
+  text-align: right;
+}
+
+/*# sourceMappingURL=cart.css.map */

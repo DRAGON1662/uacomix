@@ -1,0 +1,180 @@
+.grid-content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-top: 15px;
+
+    .content__filters {
+        max-width: 350px;
+        min-width: 240px;
+        background: url(../img/filters-bg.png);
+        padding: 0 20px;
+        // flex-grow: 1;
+
+        .filter {
+            margin: 30px 0;
+
+            .filter__head {
+                @include font(1.1rem, $color-white, italic, 300, capitalize);
+                border: 3px solid $color-white;
+                border-radius: 8px;
+                padding: 3px;
+            }
+
+            .filter__list {
+                margin-top: 15px;
+                text-decoration: none;
+                list-style-image: url(../img/filter-img.png);
+                padding-left: 2rem;
+
+                a {
+                    color: $main-color;
+                    text-decoration: none;
+                    padding: 5px;
+                    line-height: 1.8rem;
+                }
+            }
+        }
+
+        @include media(726px) {
+            display: none;
+        }
+    }
+
+    @include media(960px) {
+
+    }
+
+    @include media(726px) {
+        display: none;
+
+        grid-template-columns: 1fr;
+    }
+
+    @include media(480px) {
+        margin-left: 0;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .grid-content__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-left: 25px;
+
+        .comics {
+            position: relative;
+            width: 100%;
+            font-style: italic;
+
+            span.comics__bundle {
+                position: absolute;
+                background: $color-yellow;
+                transform: rotate(-90deg);
+                padding: 8px;
+                @include font(1rem, $primary-color, italic, normal, uppercase);
+            }
+            span.preorder-bundle {
+                top: 68px;
+                left: -58px;
+            }
+            span.new-bundle {
+                top: 27px;
+                left: -17px;
+            }
+
+            .brandnew__bundle {
+                width: 30px;
+                background: $color-yellow;
+                position: absolute;
+                top: 0;
+                left: 11px;
+                text-transform: uppercase;
+                @include flex(column, nowrap, space-between);
+                height: 369px;
+
+                i {
+                    display: block;
+                    text-align: center;
+                }
+            }
+
+            img { width: inherit; }
+            .comics__price {
+                @include flex(row, wrap, space-around);
+                margin: 8px 0;
+
+                a{
+                    @include font(1rem, $primary-color, italic, bold, uppercase);
+                }
+                a:hover{
+                    color: $main-color;
+                }
+            }
+            
+            .comics__more {
+                @include font(1rem, $primary-color, italic, bold, uppercase);
+                display: block;
+                text-align: center;
+                margin: 5px 0;
+            }
+            .comics__more:hover {
+                color: $main-color;
+            }
+
+            @include media(726px) {
+
+                img { width: 100%; }
+
+            }
+
+            @include media(480px) {
+                width: 95%;
+
+                .comics__price {
+                    width: 100%;
+                    justify-content: space-between;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        @include media(960px) {
+            justify-content: space-around;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media(726px) {
+            max-width: 95%;
+            margin: 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 15px;
+        }
+
+        @include media(480px) {
+            margin-left: 0;
+            max-width: 100%;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    }
+
+    @include media(960px) {
+        justify-content: space-around;
+    }
+
+    @include media(726px) {
+        max-width: 95%;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px 15px;
+    }
+
+    @include media(480px) {
+        margin-left: 0;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}

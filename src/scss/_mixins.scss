@@ -1,0 +1,84 @@
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+@mixin flex($dir: row, $wrap: wrap, $justify: space-between) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+}
+
+@mixin border($thickness: 1px, $color: black, $radius: 0) {
+    border: $thickness solid $color;
+    -webkit-border: $thickness solid $color;
+    -moz-border: $thickness solid $color;
+    -o-border: $thickness solid $color;
+    -ms-border: $thickness solid $color;
+    @if $radius > 0 { border-radius: $radius; }
+}
+
+@mixin backgroundImage($name, $second-color: $color-white) {
+    background-image: url("../img/#{$name}.png");
+    background-color: $second-color;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin backgroundImageSized($name, $width, $height: $width) {
+    background-image: url("../img/#{$name}.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $width $height;
+    width: $width;
+    height: $height;
+}
+
+@mixin sprite($name, $w, $h, $posX: 0, $posY: 0) {
+    width: $w;
+    height: $h;
+    background-image: url("../img/#{$name}.png");
+    background-repeat: no-repeat;
+    background-position: $posX $posY;
+}
+
+@mixin font($size: 1rem, $color: #fff, $style: normal, $weight: normal, $transform: inherit) {
+    font-size: $size;
+    color: $color;
+    font-style: $style;
+    font-weight: $weight;
+    text-transform: $transform;
+    text-decoration: none;
+}
+
+@mixin fontNormalUpperCase {
+    font-size: 0.9rem;
+    color: $primary-color;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+@mixin sexyBorder($size: 1px, $color: #f98012, $radius: 3px) {
+    border: $size solid $color;
+    border-radius: $radius;
+}
+
+@mixin outline() {
+    outline: 1px solid #cc0000;
+}
+
+@mixin roundedInput() {
+    outline: none;
+    border: 4px solid $input-border-color;
+    border-radius: 10px;
+    line-height: 1.3rem;
+    padding: 5px 0 5px 5px;
+}
+
+@mixin media($w) {
+    @media screen and (max-width: $w) { @content; }
+}

@@ -1,0 +1,278 @@
+@import '../_mixins';
+@import '../_variables';
+@import '../_fonts';
+
+.cart__heading {
+    @include font(2.1rem, $primary-color, normal, 900);
+    text-align: center;
+    margin-top: 35px;
+}
+
+.cart__table {
+    width: 1081px;
+    margin: 0 auto;
+    border: none;
+
+    thead {
+        @include backgroundImageSized(table-background, 1081px, 78px);
+        @include font(1.3rem, $primary-color, normal, 100);
+        line-height: 50px;
+        margin-bottom: 35px;
+    }
+
+    tbody { 
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+
+        tr {
+            border-bottom: 3px solid #e8e8e8;
+        }
+
+        .cart__image {
+            width: 120px;
+            border: 5px solid $main-color;
+            border-radius: 5px;
+            margin: 23px 0;
+        }
+
+        .cart__product__name {
+            color: $main-color;
+        }
+
+        .cart__remove {
+            @include backgroundImageSized(close-ico, 25px);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+    }
+}
+
+.cart__counter {
+
+    button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: transparent;
+    }
+
+    .counter-minus {
+        @include backgroundImageSized(caret, 12px, 12px);
+        background-position-x: 5px;
+        background-position-y: 0;
+    }
+
+    .counter-plus {
+        @include backgroundImageSized(caret, 12px, 12px);
+        background-position-x: -6px;
+        background-position-y: 0;
+    }
+}
+
+.summary {
+    text-align: center;
+    @include font(1.3rem, $primary-color, normal, 700, uppercase);
+}
+
+.cart__orders {
+    margin-top: 90px;
+    margin-bottom: 50px; 
+    div { text-align: center; padding: 15px 0;}
+    a { text-decoration: none; }
+
+    .create-order {
+        @include font(1.3rem, $primary-color, normal, 700, uppercase);
+    }
+
+    .back-to-store {
+        @include font(1.3rem, $primary-color, normal, 700, uppercase);
+        color: $main-color;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            @include sprite(befor-after, 36px, 11px, 0);
+        }
+        &::after {
+            content: "";
+            display: inline-block;
+            @include sprite(befor-after, 36px, 11px, -36px);
+        }
+    }
+}
+
+.stage {
+    @include flex(row, nowrap, center);
+    align-items: center;
+    margin: 45px 0;
+
+    .stage__step {
+        @include backgroundImageSized(stage-circle, 59px);
+        text-align: center;
+        vertical-align: middle;
+        line-height: 59px;
+        margin: 0 12px;
+        font-weight: 900;
+        font-size: 1.2rem;
+    }
+
+    .stage__step-active {
+        @include backgroundImageSized(stage-circle-hover, 59px);
+        color: $main-color;
+    }
+
+    .stage__line {
+        @include backgroundImageSized(stage-line, 371px, 7px);
+    }
+
+    .stage__line-active {
+        @include backgroundImageSized(stage-line-hover, 371px, 7px);
+        color: $main-color;
+    }
+}
+
+.makeOrder {
+    @include flex;
+
+    .makeOrder__customerInfo {
+        @include flex(column, nowrap);
+        align-items: center;
+        flex: 1 1 770px;
+    }
+
+    .orderStep {
+
+        &__heading {
+            @include font(1.2rem, $main-color, normal, 100, uppercase);
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+
+    .orderStep--bordered {
+        @include backgroundImageSized(orderStep-border, 645px, 5px);
+    }
+
+    .orderStep__content {
+        padding: 10px 0 30px;
+
+        table {
+            text-align: center;
+            margin-left: 60px;
+        }
+
+        td.lb {
+            text-align: right;
+            padding-right: 10px;
+            @include font(1.1rem, $primary-color, normal, 500);
+        }
+
+        input {
+            @include roundedInput;
+            width: 220px;
+            margin: 5px 0;
+        }
+
+        .delivery__body {
+            padding-top: 35px;
+
+            p {
+                padding: 25px 15px 5px 15px;
+                text-align: center;
+            }
+        }
+        
+        .discount-btn {
+            margin-left: 10px;
+            padding: 5px;
+            @include font(0.9rem, $white, normal, 400, uppercase);
+            border-radius: 4px;
+            background: $main-color;
+            border: 1px solid $main-color;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .paymentMethod {
+            list-style-image: url(../img/filter-img.png);
+            padding-left: 2rem;
+
+            button {
+                border: none;
+                outline: none;
+                background: transparent;
+                color: $main-color;
+                text-decoration: none;
+                padding: 5px;
+                line-height: 1.8rem;
+                @include font(1.2rem, $primary-color, normal, 500);
+            }
+
+            li p {
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .makeOrder__orderSummury {
+        width: 400px;
+        background: url(../img/filters-bg.png);
+        padding: 15px;
+        color: $white;
+
+        .order{
+            @include flex(row, nowrap, normal);
+            margin-bottom: 25px;
+
+            .order__image {
+                width: 95px;
+                border: 1px solid #666665;
+            }
+
+            .order__info {
+                margin-left: 12px;
+                @include flex(column, nowrap, space-between);
+                flex: 1;
+
+                .order__title {
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+                .flex-price {
+                    @include flex;
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .orderSummury {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            table {
+                width: 100%;
+
+                td {
+                    padding: 5px 0;
+                }
+
+                tr.totalSummury {
+                    font-size: 1.4rem;
+                    td {padding-top: 30px;}
+                }
+            }
+
+            .text-upper {
+                text-transform: uppercase;
+            }
+            .text-right {
+                text-align: right;
+            }
+        }
+    }
+}

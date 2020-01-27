@@ -1,0 +1,107 @@
+.product {
+    @include flex(row, nowrap);
+
+    .product__images {
+
+        .product__cover {
+            width: 350px;
+        }
+
+        .product__gallery {
+            @include flex;
+            margin-top: 20px;
+            .gallery__item {
+                width: 100px;
+            }
+        }
+
+        .product__price {
+            @include flex;
+            margin-top: 25px;
+
+            p {
+                font-size: 1.1rem;
+                color: $price-color;
+                font-weight: 500;
+            }
+            a.btn {
+                @include font(1.1rem, $main-color, italic, 800, uppercase);
+            }
+        }
+    }
+
+    .product__details {
+        padding: 0 25px;
+
+        .product__heading {
+            @include font(2rem, $main-color, normal, bold);
+        }
+
+        .charakteristics__row {
+            padding: 5px 0; 
+
+            .charakteristics__name {
+                @include font(1rem, $price-color, italic, 400, uppercase);
+            }
+
+            .charakteristics__value {
+                @include font(1rem, $primary-color, normal, 400, uppercase);
+            }
+        }
+
+        .product__description {
+            margin-top: 35px;
+            line-height: 1.45rem;
+            text-align: justify;
+            @include font(1.2rem, $primary-color, italic, 600);
+
+        }
+    }
+}
+
+.recommended {
+
+    &__heading {
+        text-align: center;
+        font-size: 1.6rem;
+        color: $additional-font;
+    }
+
+    &__comicses {
+        @include flex(row, wrap, space-around);
+
+        .recommended__comics {
+            width: 190px;
+            &:hover img {
+                border: 5px solid $main-color;
+                border-radius: 5px;
+            }
+            img {
+                width: inherit;
+                height: inherit;
+                margin-bottom: 10px;
+            }
+            p {
+                text-align: center;
+                color: $additional-font;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+.backToStore {
+    text-align: center;
+    margin: 40px 0;
+    a {
+        @include font(1.6rem, $additional-font, normal, 600, uppercase);
+
+        &:hover { color: $main-color; }
+    }
+}
+
+#product-section {
+    .main-navigation { margin-top: 15px; }
+}

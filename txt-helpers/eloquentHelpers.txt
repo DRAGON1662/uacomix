@@ -1,0 +1,18 @@
+Product::findMany([75, 73, 12, 13]);
+Product::find(89);
+
+
+AUTO_INCREMENT --> change 1001
+
+Step 1, create your table:
+create table penguins(
+  my_id       int(16) auto_increment, 
+  skipper     varchar(4000),
+  PRIMARY KEY (my_id)
+)
+Step 2, set the start number for auto increment primary key:
+ALTER TABLE penguins AUTO_INCREMENT=1001;
+
+####   The server requested authentication method unknown to the client
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password
+BY '****'; 

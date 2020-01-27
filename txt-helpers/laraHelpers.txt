@@ -1,0 +1,99 @@
+
+
+## blade
+
+@section('sidebar')
+    This is the master sidebar.
+@show
+
+@yield('title')
+
+----------- some masterpage here
+<html>
+    <head>
+        <title>App Name - @yield('title')</title>
+    </head>
+    <body>
+        @section('sidebar')
+            This is the master sidebar.
+        @show
+
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
+--------------- end masterpage
+
+---- Stored in resources/views/child.blade.php ----
+
+@extends('layouts.app')
+
+@section('title', 'Page Title')
+
+@section('sidebar')
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
+@endsection
+
+@section('content')
+    <p>This is my body content.</p>
+@endsection
+
+
+Hello, {!! $name !!}.
+
+# Loops
+@for ($i = 0; $i < 10; $i++)
+    The current value is {{ $i }}
+@endfor
+
+@foreach ($users as $user)
+    <p>This is user {{ $user->id }}</p>
+@endforeach
+
+@forelse ($users as $user)
+    <li>{{ $user->name }}</li>
+@empty
+    <p>No users</p>
+@endforelse
+
+@while (true)
+    <p>I'm looping forever.</p>
+@endwhile
+
+
+<form method="POST" action="/profile">
+    {{ csrf_field() }}
+
+    ...
+</form>
+
+<div>
+    @include('shared.errors')
+
+    <form>
+        <!-- Form Contents -->
+    </form>
+</div>
+
+@include('view.name', ['some' => 'data'])
+
+
+@push('scripts')
+    <script src="/example.js"></script>
+@endpush
+<head>
+    <!-- Head Contents -->
+
+    @stack('scripts')
+</head>
+
+
+{{ $name or 'Default' }}
+
+
+background: #fff;
+    border-radius: 50%;
+    padding: 3px
